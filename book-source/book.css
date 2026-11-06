@@ -1,0 +1,88 @@
+@page {
+  size: A4;
+  margin: 22mm 20mm 22mm 20mm;
+  @bottom-center { content: counter(page); font: 9pt "Avenir Next", "Helvetica Neue", sans-serif; color: #6b7280; }
+  @bottom-right { content: "Security Standards and Frameworks"; font: 8pt "Avenir Next", "Helvetica Neue", sans-serif; color: #9ca3af; }
+}
+@page cover { margin: 0; @bottom-center { content: none; } @bottom-right { content: none; } }
+
+:root { --ink:#1b1f24; --muted:#5b6470; --accent:#0e5a6b; --accent2:#c2410c; --rule:#d6dbe1; --tint:#eef4f6; --tint2:#fbf3ec; }
+html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+body { margin:0; font-family: Charter, "Iowan Old Style", Georgia, serif; font-size: 10.4pt; line-height: 1.5; color: var(--ink); background:#fff; }
+h1,h2,h3,.ch-part,.ch-num,.ch-sub,.toc,table,.callout strong,.ex-h,.glance th,.layer b { font-family: "Avenir Next", "Helvetica Neue", Helvetica, Arial, sans-serif; }
+a { color: var(--accent); text-decoration: none; }
+code { font-family: Menlo, "SF Mono", monospace; font-size: 8.6pt; background: #f1f3f5; padding: 0 3px; border-radius: 3px; word-break: break-word; }
+.mk { position:absolute; font-size:1px; color:#fff; }
+
+/* cover */
+.cover { page: cover; height: 297mm; position: relative; background: #0b2e36; color: #fff; break-after: page; overflow: hidden; }
+.cover-band { position:absolute; left:0; top:0; bottom:0; width: 14mm; background: var(--accent2); }
+.cover-inner { position:absolute; left: 32mm; right: 22mm; top: 62mm; }
+.cover-kicker { font-family: "Avenir Next", sans-serif; letter-spacing: .2em; text-transform: uppercase; font-size: 10pt; color: #9fd3de; }
+.cover-title { font-family: "Avenir Next", sans-serif; font-weight: 700; font-size: 40pt; line-height: 1.08; margin: 8mm 0 8mm; }
+.cover-sub { font-size: 13pt; line-height: 1.5; color: #dbe8eb; max-width: 135mm; }
+.cover-list { margin-top: 22mm; font-family: "Avenir Next", sans-serif; font-size: 9pt; line-height: 1.8; color: #9fb9bf; max-width: 140mm; border-top: 1px solid #2f5964; padding-top: 6mm; }
+.cover-foot { position:absolute; top: 200mm; font-family:"Avenir Next",sans-serif; font-size: 9pt; color:#7fa3ab; }
+
+/* toc */
+.toc { break-after: page; }
+.toc .ch-title { margin: 0 0 5mm; }
+.toc-part { font-size: 8.5pt; text-transform: uppercase; letter-spacing: .08em; color: var(--accent); margin: 3.6mm 0 1mm; font-weight: 600; }
+.toc-row { display:flex; align-items: baseline; font-size: 10pt; padding: 0.55mm 0; }
+.toc-row .n { width: 9mm; color: var(--muted); }
+.toc-row a { color: var(--ink); }
+.toc-row .dots { flex:1; border-bottom: 1px dotted #b8c0c8; margin: 0 2mm; transform: translateY(-1mm); }
+.toc-row .pg { width: 8mm; text-align: right; color: var(--muted); }
+
+/* chapters */
+.chapter { break-before: page; position: relative; }
+.ch-part { font-size: 8.5pt; text-transform: uppercase; letter-spacing: .1em; color: var(--accent); font-weight: 600; }
+.ch-num { font-size: 9pt; color: var(--accent2); font-weight: 600; margin-top: 10mm; letter-spacing: .05em; text-transform: uppercase; }
+.ch-title { font-size: 27pt; line-height: 1.12; margin: 2mm 0 2mm; color: #0b2e36; font-weight: 700; }
+.ch-sub { font-size: 12.5pt; color: var(--muted); margin-bottom: 7mm; padding-bottom: 5mm; border-bottom: 2px solid var(--accent); }
+.front .ch-title { margin-top: 8mm; margin-bottom: 6mm; }
+h2 { font-size: 14pt; color: #0b2e36; margin: 7mm 0 2mm; break-after: avoid; }
+h3 { font-size: 11pt; color: var(--accent); margin: 5mm 0 1.5mm; break-after: avoid; }
+p { margin: 0 0 2.6mm; orphans: 3; widows: 3; }
+.lead { font-size: 11.6pt; line-height: 1.55; color: #2b333c; }
+ul, ol { margin: 0 0 3mm; padding-left: 6mm; }
+li { margin-bottom: 1.2mm; }
+.small { font-size: 8.8pt; color: var(--muted); }
+
+/* tables */
+table { border-collapse: collapse; width: 100%; margin: 2mm 0 4mm; font-size: 8.8pt; line-height: 1.4; }
+table.data th { background: #0b2e36; color: #fff; text-align: left; padding: 2mm 2.4mm; font-weight: 600; }
+table.data td { padding: 1.8mm 2.4mm; border-bottom: 1px solid var(--rule); vertical-align: top; }
+table.data tbody tr:nth-child(even) td { background: #f7f9fa; }
+table.data tr { break-inside: avoid; }
+table.data ul { margin: 0; padding-left: 4.5mm; }
+table.two td { width: 50%; }
+table.glance { background: var(--tint); border-left: 4px solid var(--accent); margin: 0 0 5mm; font-size: 9pt; }
+table.glance th { width: 30mm; text-align: left; vertical-align: top; padding: 1.6mm 3mm; color: var(--accent); font-weight: 600; }
+table.glance td { padding: 1.6mm 3mm 1.6mm 0; }
+table.glance tr:first-child th, table.glance tr:first-child td { padding-top: 3mm; }
+table.glance tr:last-child th, table.glance tr:last-child td { padding-bottom: 3mm; }
+table.qr { font-size: 7.8pt; }
+table.qr td.url { word-break: break-all; font-family: Menlo, monospace; font-size: 6.8pt; color: var(--accent); }
+
+/* boxes */
+.callout { background: var(--tint2); border-left: 4px solid var(--accent2); padding: 3mm 4mm; margin: 4mm 0; font-size: 9.6pt; break-inside: avoid; }
+.callout strong { color: var(--accent2); }
+.example { border: 1px solid var(--rule); border-radius: 2mm; padding: 3mm 4mm 1mm; margin: 4mm 0; }
+.ex-h { font-weight: 600; color: var(--accent); margin-bottom: 2mm; font-size: 10pt; }
+.example table.glance { background: transparent; border-left: none; }
+.flow { display:flex; gap: 2mm; margin: 3mm 0 4mm; }
+.flow span { flex:1; text-align:center; background: var(--accent); color:#fff; font-family:"Avenir Next",sans-serif; font-weight:600; font-size:9.5pt; padding: 2.5mm 1mm; position: relative; }
+.flow span:not(:last-child)::after { content:"\203A"; position:absolute; right:-2.2mm; top: 1.2mm; color: var(--accent2); font-size: 14pt; }
+
+/* layers */
+.layers { margin: 3mm 0 5mm; }
+.layer { display:flex; gap: 4mm; padding: 2.6mm 4mm; margin-bottom: 1.4mm; font-size: 9.2pt; break-inside: avoid; color: #fff; }
+.layer b { width: 44mm; flex: none; font-size: 9.6pt; }
+.l1{background:#0b2e36}.l2{background:#124654}.l3{background:#0e5a6b}.l4{background:#2d7280}.l5{background:#4b8a96}.l6{background:#6ea2ab}
+
+ul.cols2 { columns: 2; column-gap: 8mm; }
+dl.gloss dt { font-family: "Avenir Next", sans-serif; font-weight: 600; color: var(--accent); margin-top: 2.6mm; break-after: avoid; }
+dl.gloss dd { margin: 0.5mm 0 0 0; }
+table.qr th:nth-child(1){width:18%} table.qr th:nth-child(2){width:11%} table.qr th:nth-child(3){width:21%} table.qr th:nth-child(4){width:24%} table.qr th:nth-child(5){width:26%}
+table.qr td.url { word-break: normal; overflow-wrap: anywhere; }

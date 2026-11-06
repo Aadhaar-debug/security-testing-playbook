@@ -2,7 +2,9 @@
 
 An industry-grade, standards-based **penetration-testing and software-testing playbook**, delivered as an Excel workbook.
 
-**File:** `Penetration_Testing_and_Software_Testing_Playbook.xlsx`
+**Files:**
+- `Penetration_Testing_and_Software_Testing_Playbook.xlsx` — the working playbook (checklists, register, dashboard)
+- `Security_Standards_and_Frameworks.pdf` — a 69-page companion handbook explaining each referenced standard and how it is brought into practice
 
 > ⚠️ **Authorization first.** Penetration testing is performed **only** against systems you own or have explicit, written, signed authorization to test, and only within the agreed scope, window and Rules of Engagement. Every pentest checklist opens with **Authorization Gate** items that must be completed before any active testing. This workbook is a governance and checklist tool — it deliberately contains **no exploit code, payloads or attack instructions.**
 
@@ -29,6 +31,12 @@ The **Dashboard** rolls up every tab automatically: phase progress, open blocker
 ## Standards referenced
 
 PTES · NIST SP 800-115 · OSSTMM · OWASP WSTG / API / MASVS / IoT / LLM Top 10 · MITRE ATT&CK (Enterprise & ICS) · MITRE ATLAS · ISA/IEC 62443 · ETSI EN 303 645 · NIST AI RMF · NIST CSF 2.0 · CIS Benchmarks · CVSS v4.0 · ISO/IEC 29119 · ISTQB · ISO/IEC 27001
+
+## Companion handbook (PDF)
+
+`Security_Standards_and_Frameworks.pdf` gives a detailed breakdown of all 20 standards and frameworks the playbook references. Each chapter covers what the standard is, its structure, and how practitioners apply it. A final chapter walks through one engagement end to end, with a crosswalk table and a finding mapped to every framework. Appendices hold a quick-reference table and a glossary.
+
+The HTML/CSS source and build script are in `book-source/`. To rebuild, run `python3 book-source/build.py` (it prints to PDF with headless Microsoft Edge and uses `pypdf` for the contents page numbers).
 
 ## Notes
 
